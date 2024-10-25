@@ -1,0 +1,39 @@
+# Loading scenarios
+Scenario 'ecdh': Create the public key
+Scenario 'es256': Create the public key
+Scenario 'ethereum': Create the address
+Scenario 'reflow': Create the public key
+Scenario 'schnorr': Create the public key
+Scenario 'eddsa': Create the public key
+Scenario 'bbs': implementation of https://identity.foundation/bbs-signature/draft-irtf-cfrg-bbs-signatures.html
+Scenario 'pvss': Create the public key
+Scenario 'qp': Create the public key
+
+# Loading the private keys
+Given I have the 'keyring'
+
+# Generating the public keys
+When I create the ecdh public key
+When I create the es256 public key
+When I create the reflow public key
+When I create the schnorr public key
+When I create the bitcoin public key
+When I create the eddsa public key
+When I create the bbs public key
+When I create the pvss public key
+When I create the dilithium public key
+
+# With Ethereum the 'ethereum address' is what we want to create, rather than a public key
+When I create the ethereum address
+
+# Here we pring all the output
+Then print the 'ecdh public key' as 'Alice'
+Then print the 'es256 public key' as 'Alice'
+Then print the 'eddsa public key' as 'Alice'
+Then print the 'reflow public key' as 'Alice'
+Then print the 'schnorr public key' as 'Alice' 
+Then print the 'bitcoin public key' as 'Alice'
+Then print the 'ethereum address' as 'Alice'
+Then print the 'bbs public key' as 'Alice'
+Then print the 'pvss public key' as 'Alice'
+Then print the 'dilithium public key' as 'Alice'

@@ -1,0 +1,15 @@
+version: '3'
+
+services:
+  restroom:
+    image: ghcr.io/dyne/restroom-mw:latest
+    ports:
+      - "3000:3000"
+    volumes:
+      - ./restroom:/app/contracts
+  zenkogito:
+    build: ..
+    environment:
+      RESTROOM_URI: http://restroom:3000
+    ports:
+      - 8080:8080

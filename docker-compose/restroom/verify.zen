@@ -1,0 +1,17 @@
+Scenario 'eddsa': Bob verifies the signature from Alice
+
+# Here we load the pubkey we'll verify the signature against
+Given I have a 'eddsa public key' from 'Alice'
+
+# Here we load the object to be verified
+Given I have a 'string array' named 'myStringArray'
+
+# Here we load the object's signature
+Given I have a 'eddsa signature' named 'myStringArray.eddsa-signature'
+
+# Here we perform the verifications
+When I verify the 'myStringArray' has a eddsa signature in 'myStringArray.eddsa-signature' by 'Alice'
+
+# Here we print out the result: if the verifications succeeded, a string will be printed out
+# if the verifications failed, Zenroom will throw an error
+Then print the string 'ok'
